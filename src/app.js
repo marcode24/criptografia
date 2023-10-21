@@ -1,5 +1,5 @@
 import express from 'express';
-import { fileURLToPath  } from 'url';
+import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 
 import AES from './utils/AES.js';
@@ -11,7 +11,7 @@ const __dirname = dirname(__filename);
 const app = express();
 
 app.use(express.urlencoded({ extended: true })); // Middleware para analizar datos en formato x-www-form-urlencoded
-app.use(express.static(__dirname + '/public')); // Sirve archivos estáticos desde la carpeta 'public'
+app.use(express.static(`${__dirname}/public`)); // Sirve archivos estáticos desde la carpeta 'public'
 
 app.post('/encrypt', (req, res) => {
   const { data } = req.body;
@@ -28,7 +28,7 @@ app.post('/decrypt', (req, res) => {
 app.post('/encode', (req, res) => {
   const { data } = req.body;
   const result = Base64.encode(data);
-  res.send({result, original: data});
+  res.send({ result, original: data });
 });
 
 app.post('/decode', (req, res) => {
@@ -38,13 +38,14 @@ app.post('/decode', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(`${__dirname}/public/index.html`);
 });
 
 app.get('/base64', (req, res) => {
-  res.sendFile(__dirname + '/public/pages/base64.html');
+  res.sendFile(`${__dirname}/public/pages/base64.html`);
 });
 
 app.listen(3000, () => {
+  // eslint-disable-next-line no-console
   console.log('Servidor en ejecución en el puerto 3000');
 });

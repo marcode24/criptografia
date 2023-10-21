@@ -16,17 +16,6 @@ $chkType.addEventListener('change', () => {
   $text.placeholder = valuechkType ? 'Texto encriptado' : 'Texto a encriptar';
 });
 
-$btnAccept.addEventListener('click', () => {
-  const text = $text.value.trim().replace(/\s+/g, ' ');
-
-  if (!text || text.length === 0) {
-    alert('Debes ingresar un texto');
-    return;
-  }
-
-  valuechkType ? decrypt(text) : encrypt(text);
-});
-
 const fetchData = async (url, data) => {
   const response = await fetch(url, {
     method: 'POST',
@@ -51,7 +40,7 @@ const encrypt = async (data) => {
       <span class="subtitle">Cifrado en AES</span>
       <span class="result">${encrypted}</span>
     </div>
-  `
+  `;
   $resultsContainer.innerHTML = results;
 };
 
@@ -70,3 +59,15 @@ const decrypt = async (data) => {
   `;
   $resultsContainer.innerHTML = results;
 };
+
+$btnAccept.addEventListener('click', () => {
+  const text = $text.value.trim().replace(/\s+/g, ' ');
+
+  if (!text || text.length === 0) {
+    // eslint-disable-next-line no-alert
+    alert('Debes ingresar un texto');
+    return;
+  }
+
+  valuechkType ? decrypt(text) : encrypt(text);
+});

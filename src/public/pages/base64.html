@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/main.css">
+  <title>Base 64</title>
+</head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <section class="content">
+          <div class="card">
+            <div class="card-body">
+              <span class="title">Cifrado base64</span>
+              <label class="switch-wrapper">
+                <span>Cifrar</span>
+                <div class="switch">
+                  <input type="checkbox" id="type-encrypt">
+                  <span class="slider">
+                    <span class="circle"></span>
+                  </span>
+                </div>
+                <span>Descifrar</span>
+              </label>
+              <input type="text" class="input" id="text" placeholder="Texto a cifrar">
+              <div class="actions">
+                  <button class="accept" id="accept"> Cifrar </button>
+              </div>
+              <div class="results"></div>
+            </div>
+        </section>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="src/js/base64.js"></script>
+</html>

@@ -1,0 +1,24 @@
+{
+  "name": "criptografia",
+  "version": "1.0.0",
+  "description": "This is a criptografia project testing how to use base64 and AES criptography",
+  "main": "src/app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js"
+  },
+  "keywords": [
+    "criptografia",
+    "base64",
+    "AES",
+    "nodejs",
+    "express"
+  ],
+  "author": "Marco Cruz",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "path": "^0.12.7"
+  }
+}

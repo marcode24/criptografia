@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="src/css/main.css">
+  <title>Cifrado AES</title>
+</head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <section class="content">
+          <div class="card">
+            <div class="card-body">
+              <span class="title">Cifrado AES</span>
+              <label class="switch-wrapper">
+                <span>Encriptar</span>
+                <div class="switch">
+                  <input type="checkbox" id="type-encrypt">
+                  <span class="slider">
+                    <span class="circle"></span>
+                  </span>
+                </div>
+                <span>Desencriptar</span>
+              </label>
+              <input type="text" class="input" id="text" placeholder="Texto a encriptar">
+              <div class="actions">
+                  <button class="accept" id="accept"> Encriptar </button>
+              </div>
+              <div class="results"></div>
+            </div>
+        </section>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script src="src/js/main.js"></script>
+</html>

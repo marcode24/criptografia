@@ -16,17 +16,6 @@ $chkType.addEventListener('change', () => {
   $text.placeholder = valuechkType ? 'Texto cifrado' : 'Texto a cifrar';
 });
 
-$btnAccept.addEventListener('click', () => {
-  const text = $text.value.trim().replace(/\s+/g, ' ');
-
-  if (!text || text.length === 0) {
-    alert('Debes ingresar un texto');
-    return;
-  }
-
-  valuechkType ? decode(text) : encode(text);
-});
-
 const fetchData = async (url, data) => {
   const response = await fetch(url, {
     method: 'POST',
@@ -48,8 +37,7 @@ const encode = async (data) => {
     'cifrado',
   ];
 
-  const buildResults = (original, result) => {
-    return `
+  const buildResults = (original, result) => `
     <div class="result-wrapper">
       <span class="subtitle">Texto original</span>
       <span class="result">${original}</span>
@@ -57,7 +45,6 @@ const encode = async (data) => {
       <span class="result">${result}</span>
     </div>
     `;
-  };
 
   const promises = words.map(async (word) => {
     const result = await fetchData('/encode', word);
@@ -70,7 +57,6 @@ const encode = async (data) => {
     acc += buildResults(original, result);
     return acc;
   }, '');
-
 
   const fetchUser = await fetchData('/encode', data);
   const resultsUser = buildResults(data, fetchUser.result);
@@ -89,3 +75,15 @@ const decode = async (data) => {
   `;
   $resultsContainer.innerHTML = results;
 };
+
+$btnAccept.addEventListener('click', () => {
+  const text = $text.value.trim().replace(/\s+/g, ' ');
+
+  if (!text || text.length === 0) {
+    // eslint-disable-next-line no-alert
+    alert('Debes ingresar un texto');
+    return;
+  }
+
+  valuechkType ? decode(text) : encode(text);
+});

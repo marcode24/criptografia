@@ -1,10 +1,9 @@
 import crypto from 'crypto';
-import Base64 from "./base64.js";
+import Base64 from './base64.js';
 
 const ALGORITHM = 'aes-256-cbc';
 const KEY = crypto.randomBytes(32); // Genera una clave de 32 bytes
 const IV = crypto.randomBytes(16); // Genera un vector de inicialización (IV) de 16 bytes
-
 
 const AES = {
   encrypt: (data) => {

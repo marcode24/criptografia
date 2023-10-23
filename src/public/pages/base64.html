@@ -7,6 +7,20 @@
   <title>Base 64</title>
 </head>
   <body>
+    <header>
+      <div class="header-wrapper">
+        <div class="header-title">
+          <h1>Criptografía</h1>
+        </div>
+        <div class="header-menu">
+          <ul>
+            <li><a href="/">AES</a></li>
+            <li><a href="/base64" class="active">Base64</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
     <div class="container">
       <div class="wrapper">
         <section class="content">
@@ -23,11 +37,14 @@
                 </div>
                 <span>Descifrar</span>
               </label>
-              <input type="text" class="input" id="text" placeholder="Texto a cifrar">
-              <div class="actions">
-                  <button class="accept" id="accept"> Cifrar </button>
-              </div>
-              <div class="results"></div>
+              <form id="form">
+                <div class="input-group">
+                  <input type="text" class="input" id="text" placeholder="Texto a cifrar">
+                </div>
+                <div class="actions">
+                    <button class="accept lg" type="submit" id="accept"> Cifrar </button>
+                </div>
+              </form>
             </div>
         </section>
         </div>

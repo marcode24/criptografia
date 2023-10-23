@@ -4,9 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="src/css/main.css">
-  <title>Cifrado AES</title>
+  <title>Criptografía - Cifrado AES</title>
 </head>
   <body>
+    <header>
+      <div class="header-wrapper">
+        <div class="header-title">
+          <h1>Criptografía</h1>
+        </div>
+        <div class="header-menu">
+          <ul>
+            <li><a href="/" class="active">AES</a></li>
+            <li><a href="/base64">Base64</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
     <div class="container">
       <div class="wrapper">
         <section class="content">
@@ -23,11 +37,14 @@
                 </div>
                 <span>Desencriptar</span>
               </label>
-              <input type="text" class="input" id="text" placeholder="Texto a encriptar">
-              <div class="actions">
-                  <button class="accept" id="accept"> Encriptar </button>
-              </div>
-              <div class="results"></div>
+              <form id="form">
+                <div class="input-group">
+                  <input type="text" class="input" id="text" placeholder="Texto a encriptar">
+                </div>
+                <div class="actions">
+                    <button class="accept lg" type="submit" id="accept"> Encriptar </button>
+                </div>
+              </form>
             </div>
         </section>
         </div>
